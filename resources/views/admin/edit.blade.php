@@ -84,7 +84,7 @@
 
 <fieldset class="fieldset mb-4">
   <legend class="fieldset-legend">Описание</legend>
-  <textarea name="descr" class="textarea h-24 w-full" value="{{old('descr') ? old('descr') : $temp->descr}}" placeholder="Введите описание услуги"></textarea>
+  <textarea name="descr" class="textarea h-24 w-full" placeholder="Введите описание услуги">{{old('descr') ? old('descr') : $temp->descr}}</textarea>
   <div class="fieldset-label">До 3000 символов</div>
 </fieldset>
 
