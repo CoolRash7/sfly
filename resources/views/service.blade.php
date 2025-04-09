@@ -59,7 +59,7 @@
 <div class="font-semibold">Описание</div>
 <p>
 @if (!empty($temp->descr))  
-{{$temp->descr}}
+{!! nl2br(e($temp->descr)) !!}
 @else
 Описание отсутствует
 @endif
