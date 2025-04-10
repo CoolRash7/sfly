@@ -49,6 +49,7 @@ use Carbon\Carbon;
       @endphp
       <div class=" overflow-hidden rounded-lg aspect-square group-hover:shadow-xl bg-cover bg-center bg-[url({{$imgUrl}})]"></div>
       <h2 class=" text-xs md:text-sm">{{$temp->title}}</h2>
+      <div class="text-md font-semibold">{{$temp->price}} ₽</div>
       <div class=" text-xs text-gray-400">{{Carbon::parse($temp->created_at)->diffForHumans() }}</div>
   </a>
   @endforeach

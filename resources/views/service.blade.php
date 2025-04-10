@@ -27,7 +27,7 @@
 <span class="text-sm text-gray-500">{{Carbon::parse($temp->created_at)->diffForHumans() }}</span>
 
 <!-- Slider main container -->
-<div class="swiper h-[500px] rounded-lg">
+<div class="swiper h-[300px] md:h-[400px] xl:h-[500px] rounded-lg">
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper gallery ">
     <!-- Slides -->
@@ -66,10 +66,10 @@
 </p>
 
 
-<div class="flex flex-row gap-2">
-  <a href="tel:{{$temp->contact}}" class="bg-success text-2xl font-bold text-white my-3 p-3 rounded-lg">{{$temp->contact}}</a>
+<div class="flex flex-row gap-2 mt-5">
+  <a href="tel:{{$temp->contact}}" class="btn btn-success btn-lg">{{$temp->contact}}</a>
   @isset($temp->whatsapp)
-  <a href="https://wa.me/{{$temp->contact}}" class="bg-success text-2xl font-bold text-white my-3 p-3 rounded-lg cursor-pointer">Написать в WhatsApp</a>
+  <a href="https://wa.me/{{$temp->contact}}" class="btn btn-success btn-lg">Написать в WhatsApp</a>
   @endisset
 </div>
 <div class="my-5 text-sm italic">Пользователь: {{$username}}</div>

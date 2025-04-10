@@ -25,7 +25,6 @@
 
 <form action="" method="POST" enctype="multipart/form-data" class="mx-10">
 @csrf
-<span class="text-error">*</span>
 <div class="flex flex-col md:flex-row gap-4 mb-4">
   <fieldset class="fieldset w-full">
     <legend class="fieldset-legend">Категория<span class="text-error">*</span></legend>
