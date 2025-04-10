@@ -66,7 +66,7 @@
 </p>
 
 
-<div class="flex flex-row gap-2 mt-5">
+<div class="flex flex-col md:flex-row gap-2 mt-5">
   <a href="tel:{{$temp->contact}}" class="btn btn-success btn-lg">{{$temp->contact}}</a>
   @isset($temp->whatsapp)
   <a href="https://wa.me/{{$temp->contact}}" class="btn btn-success btn-lg">Написать в WhatsApp</a>
