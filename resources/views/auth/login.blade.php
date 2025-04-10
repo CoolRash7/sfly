@@ -42,7 +42,7 @@
 <br>
 <a href="/auth/register" class="underline text-blue-500 hover:text-blue-700 ">У вас нету профиля? Зарегистрируйтесь!</a>
 <br>
-<a href="{{route('password.request')}}" class="underline text-blue-500 hover:text-blue-700 ">Забыл пароль</a>
+<!-- <a href="{{route('password.request')}}" class="underline text-blue-500 hover:text-blue-700 ">Забыл пароль</a> -->
 
 </div>
 @endsection 
