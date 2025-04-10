@@ -10,7 +10,7 @@ class PublicController extends Controller
 {
     public function serviceTemp(int $id) {   
         $temp = Service::where('id', $id)->first();
-        $username = User::where('id', $temp->user_id)->first() ?? 'Пользователь удален';
+        $username = User::where('id', $temp->user_id)->first()->name ?? 'Пользователь удален';
         return view('service', compact('temp', 'username'));
     }
 
