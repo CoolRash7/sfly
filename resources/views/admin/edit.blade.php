@@ -143,6 +143,26 @@
 </form>
 
 
+<!-- Open the modal using ID.showModal() method -->
+<button class="btn btn-error mt-20" onclick="my_modal_2.showModal()">Удалить объявление</button>
+<dialog id="my_modal_2" class="modal">
+  <div class="modal-box ">
+    <h3 class="text-lg font-bold text-error">Вы точно хотите удалить?</h3>
+    <p class="py-4">Вы уверены, что хотите удалить объявление "{{$temp->title}}"?</p>
+
+<form method="POST" action="{{route('admin.remove')}}">
+      @csrf
+
+      <input type="hidden" name="id" value="{{$temp['id']}}">
+      <button class="btn btn-error" type="submit">Удалить</button>
+
+  </form>
+  </div>
+  
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
 
 @endsection
 
