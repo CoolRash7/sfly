@@ -147,7 +147,7 @@
 @endsection
 
 @section('title')
-Добавить объявления
+Редактировать объявления
 @endsection
 
 @section('head')

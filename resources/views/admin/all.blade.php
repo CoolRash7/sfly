@@ -65,7 +65,7 @@ use Carbon\Carbon;
 @endsection
 
 @section('title')
-Все игры
+Все объявление
 @endsection
 
 @section('head')
