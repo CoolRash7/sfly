@@ -84,7 +84,7 @@
     <div class="mx-auto md:mx-0 overflow-hidden rounded-full aspect-square  w-full max-w-[50px] bg-cover bg-center bg-[url({{$imgUrl}})]"></div>
     <div class="text-sm">
         <p class="font-semibold">{{$fio}}</p>
-        <p>{{auth()->user()->email}}</p>
+        <p>{{$user->email}}</p>
     </div>
 </div>
 
