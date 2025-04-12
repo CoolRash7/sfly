@@ -26,7 +26,7 @@
                 <option value="prazdniki_i_meropriyatiya" {{ request('category') == 'prazdniki_i_meropriyatiya' ? 'selected' : '' }}>Праздники и мероприятия</option>
                 <option value="rabota_s_tekstom_perevody" {{ request('category') == 'rabota_s_tekstom_perevody' ? 'selected' : '' }}>Работа с текстом, переводы</option>
                 <option value="reklama_i_poligrafiya" {{ request('category') == 'reklama_i_poligrafiya' ? 'selected' : '' }}>Реклама и полиграфия</option>
-                <option value="remont_komputerov_mobilnyh_ustroistv" {{ request('category') == 'santremont_komputerov_mobilnyh_ustroistvehniki' ? 'selected' : '' }}>Ремонт компьютеров, мобильных устройств</option>
+                <option value="remont_komputerov_mobilnyh_ustroistv" {{ request('category') == 'remont_komputerov_mobilnyh_ustroistv' ? 'selected' : '' }}>Ремонт компьютеров, мобильных устройств</option>
                 <option value="slesari" {{ request('category') == 'slesari' ? 'selected' : '' }}>Слесари</option>
                 <option value="sozdanie_saitov_podderzhka_po" {{ request('category') == 'sozdanie_saitov_podderzhka_po' ? 'selected' : '' }}>Создание сайтов, поддержка ПО</option>
                 <option value="uborka_pomeshenii_territorii" {{ request('category') == 'uborka_pomeshenii_territorii' ? 'selected' : '' }}>Уборка помещений, территорий</option>
