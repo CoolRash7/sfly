@@ -48,7 +48,7 @@
 @endsection 
 
 @section('title')
-Вход | iBeats
+Вход
 @endsection
 
 

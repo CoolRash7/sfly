@@ -72,7 +72,22 @@
   <a href="https://wa.me/{{$temp->contact}}" class="btn btn-success btn-lg">Написать в WhatsApp</a>
   @endisset
 </div>
-<div class="my-5 text-sm italic">Пользователь: {{$username}}</div>
+
+@php
+
+    $imgUrl = (!empty($user->avatar)) ? asset('/storage/'.$user->avatar) : asset('none-user.jpg');
+    $fio = $user->fam.' '.$user->name.' '.$user->otch;
+    $birthday_formatted = \Carbon\Carbon::parse($user->birthday)->isoFormat('D MMMM YYYY');
+@endphp
+
+<div class="flex flex-col md:flex-row gap-3 mt-5">
+    <div class="mx-auto md:mx-0 overflow-hidden rounded-full aspect-square  w-full max-w-[50px] bg-cover bg-center bg-[url({{$imgUrl}})]"></div>
+    <div class="text-sm">
+        <p class="font-semibold">{{$fio}}</p>
+        <p>{{auth()->user()->email}}</p>
+    </div>
+</div>
+
 <!-- AddToAny BEGIN -->
 <div class="a2a_kit a2a_kit_size_32 a2a_default_style mt-5">
 <a class="a2a_dd" href="https://www.addtoany.com/share"></a>

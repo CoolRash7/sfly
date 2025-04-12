@@ -66,45 +66,48 @@ class AuthController extends Controller
         Auth::login($user);
 
         return redirect( route('home') );
-
-        
-        
-
-
-        // $user = User::create([
-        //     'name' => $validated['name'],
-        //     'email' => $validated['email'],
-        //     'password' => $validated['password']
-        // ]);
-
-        // event(new Registered($user));
-
-        // Auth::login($user);
-
-        // return redirect( route('home') );
     }
 
-    // Метод для проверки капчи
-    private function validateCaptcha($token, $ip)
-    {
-        $serverKey = env('SMARTCAPTCHA_SERVER_KEY'); // Ключ сервера из .env
+    public function lkEditPage(Request $request) {
 
-        $response = Http::asForm()->post('https://smartcaptcha.yandexcloud.net/validate', [
-            'secret' => $serverKey,
-            'token' => $token,
-            'ip' => $ip,
+        //echo 'calc id: '.$id;
+
+        $user = Auth::user();
+
+        return view('auth.edit', ['user' => $user]);
+    }
+
+    public function lkEditStore(Request $request) {
+
+        $user = Auth::user();
+        
+        $validated = $request->validate([
+            'name' => ['required', 'string'],
+            'fam' => ['nullable', 'string'],
+            'otch' => ['nullable', 'string'],
+            'pol' => ['nullable', 'string'],
+            'birthday' => ['nullable', 'string'],
+            'avatar' => ['nullable', 'image', 'max:2048'],
         ]);
 
-        // Если запрос не удался, считаем капчу пройденной (на ваше усмотрение)
-        if ($response->status() !== 200) {
-            return true;
-        }
+        if ($user['avatar'] && $request->hasFile('avatar'))
+            Storage::disk('public')->delete($user->avatar);
 
-        // Проверяем статус ответа
-        $responseData = $response->json();
-        return $responseData['status'] === 'ok';
+        $avatar_path = $request->file('avatar') ? 
+            $request->file('avatar')->store('image/avatar', 'public') :
+            Auth::user()->avatar;
+
+        Auth::user()->update([
+            'name' => $validated['name'],
+            'fam' => $validated['fam'],
+            'otch' => $validated['otch'],
+            'pol' => $validated['pol'],
+            'birthday' => $validated['birthday'],
+            'avatar' => $avatar_path,
+        ]);
+
+        return redirect()->route('lk');
     }
-
 
     public function loginStore(Request $request) {
         $validated = $request->validate([

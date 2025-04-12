@@ -10,8 +10,9 @@ class PublicController extends Controller
 {
     public function serviceTemp(int $id) {   
         $temp = Service::where('id', $id)->first();
-        $username = User::where('id', $temp->user_id)->first()->name ?? 'Пользователь удален';
-        return view('service', compact('temp', 'username'));
+        $user = User::where('id', $temp->user_id)->first() ?? NULL;
+        // $username = User::where('id', $temp->user_id)->first()->name ?? 'Пользователь удален';
+        return view('service', compact('temp', 'user'));
     }
 
     public function search(Request $request) {
