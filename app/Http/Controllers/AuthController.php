@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Http;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Auth\Events\Registered;
 
@@ -90,7 +91,7 @@ class AuthController extends Controller
             'avatar' => ['nullable', 'image', 'max:2048'],
         ]);
 
-        if ($user['avatar'] && $request->hasFile('avatar'))
+        if ($user->avatar && $request->hasFile('avatar'))
             Storage::disk('public')->delete($user->avatar);
 
         $avatar_path = $request->file('avatar') ? 
