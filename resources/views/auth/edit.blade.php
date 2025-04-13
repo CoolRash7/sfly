@@ -5,7 +5,7 @@
 
 
 <a class="btn btn-xs mb-4" href="{{route('lk')}}">Вернуться</a>
-<h1 class="text-3xl font-bold text-center mb-4">Редактировать профиль "{{$user->name}}"</h1>
+<h1 class="text-3xl font-bold text-center mb-4">Редактировать профиль</h1>
 
 @if ($errors->any())
   <div role="alert" class="alert alert-error">
